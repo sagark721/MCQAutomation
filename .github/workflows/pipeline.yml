@@ -1,0 +1,107 @@
+name: MCQ Markets Automation
+
+on:
+
+  workflow_dispatch:
+
+
+    environement:
+      description: "Which environment to test?"
+      required: true
+      default: "v3"
+      type: choice
+      options:
+        - v3
+        - v4
+
+
+    test_suite:
+      description : "Which suite to run?"
+      required: true
+      default: "regression"
+      type: choice
+      options:
+        - regression
+        - smoke
+        - functional
+        - api
+
+
+    browser:
+      description: "Which browser to run on?"
+      required: true
+      default: 'chromium'
+      type: choice
+      options:
+        - chromium
+        - webkit
+        - firefox
+    
+jobs:
+
+  playwright-tests:
+    
+    runs-on: ubuntu-latest
+
+    name: 'Running ${{github.event.inputs.test_suite}} on ${{github.event.inputs.environement}}...'
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependancies
+        run: npm ci
+
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps ${{github.event.inputs.browser}}
+
+
+      - name: Run Playwright Tests
+        
+        env:
+          TEST_ENV: ${{github.event.inputs.environement}}
+
+          BASE_URL: ${{secrets.BASE_URL}}
+
+          CAN_INDIVIDUAL_EMAIL: ${{secrets.CAN_INDIVIDUAL_EMAIL}}
+          CAN_INDIVIDUAL_PASSWORD: ${{secrets.CAN_INDIVIDUAL_PASSWORD}}
+
+          IND_TRUST_EMAIL: ${{secrets.IND_TRUST_EMAIL}}
+          IND_TRUST_PASSWORD: ${{secrets.IND_TRUST_PASSWORD}}
+
+          US_COMPANY_EMAIL: ${{secrets.US_COMPANY_EMAIL}}
+          US_COMPANY_PASSWORD: ${{secrets.US_COMPANY_PASSWORD}}
+
+        run:
+          if [${{github.event.inputs.test_suite}} == 'regression']; then 
+          npx playwright test --project=${{github.event.inputs.browser}}; 
+          
+          fi
+
+      
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Playwright-Report-${{github.event.inputs.environement}}-${{github.event.inputs.test_suite}}-${{github.run_number}}
+          path: reports/html/
+          retention-days: 30
+
+
+
+      - name: Upload JUnit Result
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: junit-results-${{github.event.inputs.environement}}-${{github.event.inputs.test_suite}}-${{github.run_number}}
+          path: reports/junit/
+          retention-days: 30
