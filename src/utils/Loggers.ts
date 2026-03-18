@@ -6,7 +6,7 @@ class Logger{
 
         const timestamp = new Date().toISOString();
 
-        return `[${timestamp}] [${level}] [${context}] ${message}`;
+        return `[${timestamp}] [${level}] [${context}] : ${message}`;
 
     }
 

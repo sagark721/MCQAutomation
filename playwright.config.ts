@@ -43,6 +43,7 @@ export default defineConfig({
         trace: 'retain-on-failure',
 
         actionTimeout: 10 * 1000,
+
         navigationTimeout: 30 * 1000,
     },
 
@@ -72,6 +73,7 @@ export default defineConfig({
             dependencies: ['setup'],
             testIgnore:['**/setup/**']
         },
+        
 
         {
             name: 'android',
