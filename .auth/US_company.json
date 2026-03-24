@@ -1,0 +1,115 @@
+{
+  "cookies": [
+    {
+      "name": "mcqmarkets.session.key",
+      "value": "ZmJhOTg2NTMtNDZjZC00NDNjLWI3YmItNTM0NWU4NjY2ZDUx",
+      "domain": "dev-v3.mcqmarkets.com",
+      "path": "/",
+      "expires": 1808894183.727573,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "mcqmarkets.session.ZmJhOTg2NTMtNDZjZC00NDNjLWI3YmItNTM0NWU4NjY2ZDUx",
+      "value": "ZWVmZTc0YWYtNmIyYy00MjYzLWEzNDYtMDk0NDdiZmFjZGRl",
+      "domain": "dev-v3.mcqmarkets.com",
+      "path": "/",
+      "expires": 1808894205.515885,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "CognitoIdentityServiceProvider.5j30hgv2be0k5arsf03hafeujn.LastAuthUser",
+      "value": "54582468-4011-7053-efe2-bd70591307eb",
+      "domain": "dev-v3.mcqmarkets.com",
+      "path": "/",
+      "expires": 1805870204,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "CognitoIdentityServiceProvider.5j30hgv2be0k5arsf03hafeujn.54582468-4011-7053-efe2-bd70591307eb.accessToken",
+      "value": "eyJraWQiOiJCUDBDaGZqQ0RrbG1SdDVGV1wvZFpzXC82V1wveTUxdkdYTCtCZTk5akNWK3FNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI1NDU4MjQ2OC00MDExLTcwNTMtZWZlMi1iZDcwNTkxMzA3ZWIiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV92amNIdEpRMWEiLCJjbGllbnRfaWQiOiI1ajMwaGd2MmJlMGs1YXJzZjAzaGFmZXVqbiIsIm9yaWdpbl9qdGkiOiI5N2QyMGY2Ny1hNWNlLTQzYzMtYjRhYi0wYWIyNzEwODNjNjciLCJldmVudF9pZCI6Ijc0MTVlZDkwLWFmMTktNGYzMC05NjIzLTZjMzBkZTMyYWRlYyIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE3NzQzMzQyMDQsImV4cCI6MTc3NDMzNzgwNCwiaWF0IjoxNzc0MzM0MjA0LCJqdGkiOiI4NWY4ZTk0Yi1lNTAyLTQyZTMtYmUxMi1jMWZhMzI0NWIxNTgiLCJ1c2VybmFtZSI6IjU0NTgyNDY4LTQwMTEtNzA1My1lZmUyLWJkNzA1OTEzMDdlYiJ9.QCkib6kOOzkRWZVsOlqCZDza3YO62dqcJbYoEr0x4g8ZNeGyxSrouiD0PCX-NvU7yTqB0om3JGb0o1Pl0E2hkBBfJtFkmwEnYfqHoUPEL-QaWH5QgPJJFdPq404R-H-opKoQA9T_-mlwg_fN-2aM66zMksc09i1bjqvWHOiUSKP-RjngokMLlp_GhhJRWNTcXLi6Sm_GP5D4D2WCgz_o-WR6c-rTix4NyuQIjDh2wVquSVUs4UrtCMy37IV0z2I7ZlzW0cYCA8t-weqligLfebE9Gjv3z75BdU5jf8Rhz9X7iQVQ2ftD0o7BuX0nKqrtUa2zeSwm_t5oEVx3zdbpgw",
+      "domain": "dev-v3.mcqmarkets.com",
+      "path": "/",
+      "expires": 1805870204,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "CognitoIdentityServiceProvider.5j30hgv2be0k5arsf03hafeujn.54582468-4011-7053-efe2-bd70591307eb.idToken",
+      "value": "eyJraWQiOiJtTU5NeHZneHlnbm9wNDJMT0k0ZkRMNEZXNldEK2NobE5HTFIzNTI2YXM0PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI1NDU4MjQ2OC00MDExLTcwNTMtZWZlMi1iZDcwNTkxMzA3ZWIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfdmpjSHRKUTFhIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjpmYWxzZSwiY29nbml0bzp1c2VybmFtZSI6IjU0NTgyNDY4LTQwMTEtNzA1My1lZmUyLWJkNzA1OTEzMDdlYiIsImdpdmVuX25hbWUiOiJpbnZlc3QiLCJvcmlnaW5fanRpIjoiOTdkMjBmNjctYTVjZS00M2MzLWI0YWItMGFiMjcxMDgzYzY3IiwiYXVkIjoiNWozMGhndjJiZTBrNWFyc2YwM2hhZmV1am4iLCJldmVudF9pZCI6Ijc0MTVlZDkwLWFmMTktNGYzMC05NjIzLTZjMzBkZTMyYWRlYyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNzc0MzM0MjA0LCJuYW1lIjoiaW52ZXN0IGJ1eXNoYXJlcyIsInBob25lX251bWJlciI6Iis5MTk1NjE2NzIyNjgiLCJleHAiOjE3NzQzMzc4MDQsImlhdCI6MTc3NDMzNDIwNCwiZmFtaWx5X25hbWUiOiJidXlzaGFyZXMiLCJqdGkiOiJlNzkyODM0YS00ODU4LTQ3MDUtYWM5Yi1kYThmZGQ0NTE2ODMiLCJlbWFpbCI6InVzLWNvbXBhbnlAZ3V5c21haWwuY29tIn0.eOXbdM_VkmUnTR1qzPyuXsVMySFij8nyawpsj5ZLZIOlSozriXWWfOHdIv9mDMwGrtnMPqeUmL_c4ekYEjCEriW9aD4kMafFJsvI5AEiI28TXMuKr7rUv572zj8zJXjW2Xr0E3yAhDI_TAm-fxIDdCMy5Oo1o2NtstDi3G_YxqBqkK12y49tGfbH3gmGS9fLw_8CM4IDJolqCK12zfWcvL4TotFcZMkWfPKUyq0SNSkI2IKJjpfR3eiAVFMdUZ8z0zpQyQ_A01XKKo0zczcivUq9AV5jdcQ3kb91dbdOy2Pp0Ag2XPTn9GGXxJa5230u_q4Lwfo1PFgrYUOkwG0xpw",
+      "domain": "dev-v3.mcqmarkets.com",
+      "path": "/",
+      "expires": 1805870204,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "CognitoIdentityServiceProvider.5j30hgv2be0k5arsf03hafeujn.54582468-4011-7053-efe2-bd70591307eb.refreshToken",
+      "value": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.cZKNJjS3y6g4tZaXJLcJH5n5nIBHxGNzzUUWBrdIWaluNSet1PPiJWgTwjnWyRylqHTUdEcoWGzV07h64DfP-twL3MRuIK5hC2g-3tZwhbmtFABZDVTaJQoa7SK9TmFoA1NBqoNtnM2TtztMW93PxJZ8_Yd0jV5mJ1qVr9iatYIVywIJg4ELGni_90V6Hsm7W8pJaItj0D_IJ8eKGqUnttSLCdKB6Z0tLew3BS3ZtsnwfpWBJqM3xVaUdPYenF3P-tTrO9WDIEjnfO_vEruXA7MGKXWy_oqqR7V4KdA4NDgAlJrt3LvUSU5Qjsp_MHBk-nlY_LkXJe17ZSGfpRVirg.65psNHaVd8NcHmbj.3eV5GqdaFjxYTcqR4OcAZQT2EnVJ5C15MbzwZVHaHsapDEToaJvXX1oYYiuDzf3YG8owl1-JRQo7bfB8tju-FiwdS-ODGNm96OVZdNt2R6hrtXM_Py6-H7TEJb3dBb6QcVaMtiGLx3mWqknk_aE74CE01wpOv0QzIrIWLi64XsfIygmsQpQ9EDNZQZnNbcP6TGQtRk06N3TyDa2qJLtuwLT-898cJJ_GLU6MEGvMpGz7dJCCp899-BPs1Apm9OQAyrLNb28Y_qiG8dMM60ZXymouzCwe0b1oaTSqq3WX1sB33lz3sRSY0do-dyRzd6QRCl71K6l_8zvuawFbXErxW5ZZ5M26h0dyctH7wG_nx0z8v0VrAzalHi-3KbOwV75GtGDe4RmnzBcChl9uWFBZhqYJOqR6Wa4ulmGZBKXoYRlrW53C3LqPHh8QY6lN-vNZRG7PolS8fduksfvKOLA-_u9LB93FdVgdSyFsJ-8xiPK40-uC-iDre1GHZkrIZC-gUnC1cgZJIbxCEK0l1OIpEUUQXaSlR17wVfcecsyjyj7lHS_UUCwg6mz_zpmkh4RcM-yKALUSraQ3GI4ofyfG1bPgOjR2F_VJfgTwPfoY5mg8u7C1P5Gn6HK6Y6pomzrtQVZROEdoKuOreWjXmFRPXmcGL_IOo-S3SoDeMiI2qjk_BMEDzQF1EH_Am8n20IugOwPV1G-Sk1s9lX_UZIvoUD8g0lyzAPc32ADRdHEICi6ZUG8pGaeRmaZYQhwnO5d4I8_2zNE9hxmX9kB7jjnkdlR5pECVFwrWzFxdz47GD7hNZPXeW4fa5wpdN6MK317Q0dboDpZjpLUg0J-aI65HIxJFoG90qAyb9_UDlLUXx_i6sX1HbevtZi6v9E9ufumpQTCZR-_B0UQ9aW8fzgXrL9jXjDZCYgIsNvlKx3QMjbbyJwbS9jeu0fqb8UFeOUXUZwxU6jIXBbQvP2i9DMm9kwWwkB3E43iiga9_6TrB2WAfxmsjsZ3HtKTVv3NY-gXR4MEa4NawvvpxdqHwQz6B5iPOkIPhIzgGyRaUQ_Lwo_NbTzS1xplNbfRRXDZ7lNBVZw6Ln3SD1bEvbm64qN93loRkd1kVfQryMphCn51mEdBmSUIi-ytgP1VvO6b2Jv630BPkk6RUTN9-9Kt8eqs-f1ZeOnmMIU-0rxlpyRzsZ7HmgDqr1lucFlrQqKUHzXW2pZQkZi-6VzDur6fv_51kBi4tO7FhXhJixBf9hmgHGrnXnv122sAn8hLx5GQrsaJOd345a6FTruH0nkThmelo968-U4Ay8Ice16BWSugRVVKyk1znidTIh8VP-Gg.0xP1iCKW-ZAWJvPfi6zu4A",
+      "domain": "dev-v3.mcqmarkets.com",
+      "path": "/",
+      "expires": 1805870204,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "CognitoIdentityServiceProvider.5j30hgv2be0k5arsf03hafeujn.54582468-4011-7053-efe2-bd70591307eb.signInDetails",
+      "value": "{%22loginId%22:%22us-company@guysmail.com%22%2C%22authFlowType%22:%22USER_SRP_AUTH%22}",
+      "domain": "dev-v3.mcqmarkets.com",
+      "path": "/",
+      "expires": 1805870204,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "CognitoIdentityServiceProvider.5j30hgv2be0k5arsf03hafeujn.54582468-4011-7053-efe2-bd70591307eb.clockDrift",
+      "value": "-778",
+      "domain": "dev-v3.mcqmarkets.com",
+      "path": "/",
+      "expires": 1805870204,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "CognitoIdentityServiceProvider.5j30hgv2be0k5arsf03hafeujn.54582468-4011-7053-efe2-bd70591307eb.sessionToken",
+      "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1NDU4MjQ2OC00MDExLTcwNTMtZWZlMi1iZDcwNTkxMzA3ZWIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9jb2duaXRvLWlkcC51cy1lYXN0LTEuYW1hem9uYXdzLmNvbS91cy1lYXN0LTFfdmpjSHRKUTFhIiwicGhvbmVfbnVtYmVyX3ZlcmlmaWVkIjpmYWxzZSwiY29nbml0bzp1c2VybmFtZSI6IjU0NTgyNDY4LTQwMTEtNzA1My1lZmUyLWJkNzA1OTEzMDdlYiIsImdpdmVuX25hbWUiOiJpbnZlc3QiLCJvcmlnaW5fanRpIjoiOTdkMjBmNjctYTVjZS00M2MzLWI0YWItMGFiMjcxMDgzYzY3IiwiYXVkIjoiNWozMGhndjJiZTBrNWFyc2YwM2hhZmV1am4iLCJldmVudF9pZCI6Ijc0MTVlZDkwLWFmMTktNGYzMC05NjIzLTZjMzBkZTMyYWRlYyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNzc0MzM0MjA0LCJuYW1lIjoiaW52ZXN0IGJ1eXNoYXJlcyIsInBob25lX251bWJlciI6Iis5MTk1NjE2NzIyNjgiLCJleHAiOjE3NzQzMzc4MDQsImlhdCI6MTc3NDMzNDIwNCwiZmFtaWx5X25hbWUiOiJidXlzaGFyZXMiLCJqdGkiOiJlNzkyODM0YS00ODU4LTQ3MDUtYWM5Yi1kYThmZGQ0NTE2ODMiLCJlbWFpbCI6InVzLWNvbXBhbnlAZ3V5c21haWwuY29tIiwidXNlcklkIjo5NDMsInVzZXJHdWlkIjoiZDExNzhiNTItMDlkMC00OWE2LWFiODYtOTc3ZmMwZWM3MjJhIiwibWFya2V0aW5nRW1haWxzIjp0cnVlLCJ0ZXJtc0FncmVlZCI6dHJ1ZSwicHJvZmlsZUNvbXBsZXRlZCI6dHJ1ZX0.nY3xFVQQuQ-cn5iqLj6vdof01hxnC8k9uygfUXuo2CQ",
+      "domain": "dev-v3.mcqmarkets.com",
+      "path": "/",
+      "expires": 1808894205.514981,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "CognitoIdentityServiceProvider.5j30hgv2be0k5arsf03hafeujn.oAuthUser",
+      "value": "54582468-4011-7053-efe2-bd70591307eb",
+      "domain": "dev-v3.mcqmarkets.com",
+      "path": "/",
+      "expires": 1808894205.515491,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://dev-v3.mcqmarkets.com",
+      "localStorage": [
+        {
+          "name": "cookie.consent",
+          "value": "true"
+        }
+      ]
+    }
+  ]
+}

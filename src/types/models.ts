@@ -1,4 +1,4 @@
-export type UserType = 'Individual' | 'Trust' | 'Organization' ;
+export type UserType = 'Individual' | 'Trust' | 'Company' ;
 
 export interface UserCredentials{
     email: string;

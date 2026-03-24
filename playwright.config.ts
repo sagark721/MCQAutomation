@@ -48,10 +48,12 @@ export default defineConfig({
     },
 
 
+    outputDir: 'test-results',
+
     // Reports
 
     reporter: [
-        ['html',{outputFolder:'test-results/html', open:'never'}], 
+        ['html',{outputFolder:'playwright-report', open:'never'}], 
         ['junit',{outputFile:'test-results/junit/results.xml'}] ,
         ['list', ]
     ],
