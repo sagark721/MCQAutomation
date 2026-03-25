@@ -7,5 +7,6 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 /src/data/env/.env.v3
+claude-context.txt
 
 

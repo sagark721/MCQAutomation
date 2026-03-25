@@ -18,15 +18,26 @@ export abstract class BasePage{
         logger.info(this.pageName, `Navigating to ${this.path}`);
         await this.page.goto(this.path);
         await WaitHelpers.waitForPageReady(this.page)
-        logger.info(this.pageName, `Successfully navigated to ${this.path}`);
+       
+
+        const isCookiesBannerVisible= await this.allowCookiesButton.isVisible();
+
+        if(isCookiesBannerVisible){
+
+            await logger.info(this.pageName, "Cookies banner is visible. Attempting to allow cookies.");
+            await this.allowCookies();
+        }
+
+         logger.info(this.pageName, `Successfully navigated to ${this.path}`);
         
     }
 
 
-    async allowCookies():Promise<void>{
+    private async allowCookies():Promise<void>{
         logger.info(this.pageName,"Allowing the Cookies")
         await this.allowCookiesButton.click();
-        await WaitHelpers.waitForPageReady(this.page)
+        await WaitHelpers.waitForNetworkIdle(this.page)
+        logger.info(this.pageName,"Cookies allowed successfully")
 
     }
 

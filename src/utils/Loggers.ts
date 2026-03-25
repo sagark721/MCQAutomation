@@ -4,7 +4,14 @@ class Logger{
 
     private format(level:LogLevel, context:string, message:string): string{
 
-        const timestamp = new Date().toISOString();
+        const now = new Date();
+        const dd = String(now.getDate()).padStart(2, '0');
+        const mm = String(now.getMonth() + 1).padStart(2, '0');
+        const yyyy = now.getFullYear();
+        const HH = String(now.getHours()).padStart(2, '0');
+        const MM = String(now.getMinutes()).padStart(2, '0');
+        const SS = String(now.getSeconds()).padStart(2, '0');
+        const timestamp = `${dd}-${mm}-${yyyy} : ${HH}:${MM}:${SS}`;
 
         return `[${timestamp}] [${level}] [${context}] : ${message}`;
 

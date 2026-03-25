@@ -10,6 +10,8 @@ export class LoginPage extends BasePage{
     protected readonly path='/sign-in'
     protected readonly pageName='LoginPage';
 
+
+    //--- Locators ---//
     private readonly emailInput= this.page.getByPlaceholder('your email');
     private readonly passwordInput= this.page.locator('#password');
     private readonly loginButton= this.page.getByRole('button',{name:"Log In"})
