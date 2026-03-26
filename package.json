@@ -7,7 +7,7 @@
     "test:setup:v3":"cross-env TEST_ENV=v3 npx playwright test --project=setup",
     "test:v3": "cross-env TEST_ENV=v3 npx playwright test",
     "test:mobile:v3":"cross-env TEST_ENV=v3 npx playwright test --project=android",
-    "test:desktop:v3":"cross-env TEST_ENV=v3 npx playwright test --project=chromium"
+    "test:desktop:v3":"cross-env TEST_ENV=v3 npx playwright test --project=chromium --headed"
   },
   "keywords": [],
   "author": "",

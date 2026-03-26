@@ -45,6 +45,8 @@ export default defineConfig({
         actionTimeout: 10 * 1000,
 
         navigationTimeout: 30 * 1000,
+
+        viewport: { width: 1620, height: 700 }
     },
 
 

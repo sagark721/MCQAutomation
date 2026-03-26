@@ -39,56 +39,56 @@ setup.describe('Authentication Setup',()=>{
 
 
 
-    setup("Authenticate as Indian Trust i.e IND_Trust user",async ({page})=>{
+    // setup("Authenticate as Indian Trust i.e IND_Trust user",async ({page})=>{
 
-        if(!process.env.IND_TRUST_EMAIL || !process.env.IND_TRUST_PASSWORD){
-            throw new Error('Missing credentials for IND_trust user. Please set IND_TRUST_EMAIL and IND_TRUST_PASSWORD in your environment variables.');
-        }
+    //     if(!process.env.IND_TRUST_EMAIL || !process.env.IND_TRUST_PASSWORD){
+    //         throw new Error('Missing credentials for IND_trust user. Please set IND_TRUST_EMAIL and IND_TRUST_PASSWORD in your environment variables.');
+    //     }
 
-        const loginPage=new LoginPage(page);
+    //     const loginPage=new LoginPage(page);
 
-        await loginPage.goto();
+    //     await loginPage.goto();
         
-        await loginPage.loginWith({
-            email: process.env.IND_TRUST_EMAIL,
-            password: process.env.IND_TRUST_PASSWORD,
-            role:'Trust'
-        })
+    //     await loginPage.loginWith({
+    //         email: process.env.IND_TRUST_EMAIL,
+    //         password: process.env.IND_TRUST_PASSWORD,
+    //         role:'Trust'
+    //     })
 
 
-        await loginPage.verifyLoginSuccessful();
+    //     await loginPage.verifyLoginSuccessful();
 
-        await page.context().storageState({path:AUTH_FILES.IND_trust})
-
-
-    })
+    //     await page.context().storageState({path:AUTH_FILES.IND_trust})
 
 
+    // })
 
 
-    setup("Authenticate as US Company i.e US_COMPANY user",async({page})=>{
 
-        if(!process.env.US_COMPANY_EMAIL || !process.env.US_COMPANY_PASSWORD){
-            throw new Error("Missing credentials for US_company user. Please set US_COMPANY_EMAIL and US_COMPANY_PASSWORD in your environment variables.")
-        }
 
-        const loginPage=new LoginPage(page);
+    // setup("Authenticate as US Company i.e US_COMPANY user",async({page})=>{
 
-        await loginPage.goto();
-        await loginPage.loginWith({
-            email:process.env.US_COMPANY_EMAIL,
-            password:process.env.US_COMPANY_PASSWORD,
-            role:'Company'
-        })
+    //     if(!process.env.US_COMPANY_EMAIL || !process.env.US_COMPANY_PASSWORD){
+    //         throw new Error("Missing credentials for US_company user. Please set US_COMPANY_EMAIL and US_COMPANY_PASSWORD in your environment variables.")
+    //     }
+
+    //     const loginPage=new LoginPage(page);
+
+    //     await loginPage.goto();
+    //     await loginPage.loginWith({
+    //         email:process.env.US_COMPANY_EMAIL,
+    //         password:process.env.US_COMPANY_PASSWORD,
+    //         role:'Company'
+    //     })
 
         
-        await loginPage.verifyLoginSuccessful();
+    //     await loginPage.verifyLoginSuccessful();
 
-        await page.context().storageState({path:AUTH_FILES.US_company})
+    //     await page.context().storageState({path:AUTH_FILES.US_company})
 
 
 
-    })
+    // })
 
 
 

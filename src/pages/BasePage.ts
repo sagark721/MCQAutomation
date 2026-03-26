@@ -18,13 +18,14 @@ export abstract class BasePage{
         logger.info(this.pageName, `Navigating to ${this.path}`);
         await this.page.goto(this.path);
         await WaitHelpers.waitForPageReady(this.page)
+        await WaitHelpers.waitForNetworkIdle(this.page);
        
 
         const isCookiesBannerVisible= await this.allowCookiesButton.isVisible();
 
         if(isCookiesBannerVisible){
 
-            await logger.info(this.pageName, "Cookies banner is visible. Attempting to allow cookies.");
+            logger.info(this.pageName, "Cookies banner is visible. Attempting to allow cookies.");
             await this.allowCookies();
         }
 

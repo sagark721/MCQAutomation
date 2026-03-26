@@ -9,7 +9,7 @@ export class WaitHelpers{
         logger.debug('WaitHelpers', 'Waiting for page to be Ready');
 
         await page.waitForLoadState('domcontentloaded');
-        await WaitHelpers.waitForNetworkIdle(page);
+        await page.waitForLoadState('load')
         logger.debug('WaitHelpers', 'Page is ready now');
 
 
