@@ -1,5 +1,5 @@
 import {BasePage} from "./BasePage";
-import {Page, Locator, expect} from '@playwright/test';
+import {Page, expect} from '@playwright/test';
 import {logger} from "@logger"
 import { WaitHelpers } from "src/utils/WaitHelpers";
 
@@ -23,7 +23,7 @@ export class MyInvestPage extends BasePage{
         logger.info(this.pageName, "Clicking on Ferrari 1984 512 BBi card in My Investments page");
         await this.ferrariCard.click();
         logger.info(this.pageName, "Clicked on Ferrari 1984 512 BBi card in My Investments page");
-        // WaitHelpers.waitForNetworkIdle(this.page);
+        WaitHelpers.waitForNetworkIdle(this.page);
     }
 
     async expectFirstInvestmentCardToHaveAmount(expectedText: string): Promise<void> {

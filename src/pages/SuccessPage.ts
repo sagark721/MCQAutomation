@@ -1,5 +1,5 @@
 import {BasePage} from "./BasePage";
-import {Page, Locator, expect} from '@playwright/test';
+import {Page} from '@playwright/test';
 import {logger} from "@logger"
 import { WaitHelpers } from "src/utils/WaitHelpers";
 

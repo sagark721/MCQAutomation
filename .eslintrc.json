@@ -1,0 +1,37 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "playwright"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:playwright/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/explicit-function-return-type": "warn",
+    "playwright/no-wait-for-timeout": "error",
+    "playwright/no-force-option": "warn",
+    "playwright/prefer-web-first-assertions": "error",
+    "no-console": "warn"
+  },
+  "env": {
+    "node": true,
+    "es2020": true
+  },
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    "test-results/",
+    ".auth/"
+  ]
+}

@@ -4,10 +4,12 @@
   "description": "The Automation suite for MCQ",
   "main": "index.js",
   "scripts": {
-    "test:setup:v3":"cross-env TEST_ENV=v3 npx playwright test --project=setup",
+    "test:setup:v3": "cross-env TEST_ENV=v3 npx playwright test --project=setup",
     "test:v3": "cross-env TEST_ENV=v3 npx playwright test",
-    "test:mobile:v3":"cross-env TEST_ENV=v3 npx playwright test --project=android",
-    "test:desktop:v3":"cross-env TEST_ENV=v3 npx playwright test --project=chromium --headed"
+    "test:mobile:v3": "cross-env TEST_ENV=v3 npx playwright test --project=android",
+    "test:desktop:v3": "cross-env TEST_ENV=v3 npx playwright test --project=chromium --headed",
+    "lint": "eslint src/**/*.ts tests/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts tests/**/*.ts --fix"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +18,11 @@
   "devDependencies": {
     "@playwright/test": "^1.58.2",
     "@types/node": "^25.4.0",
+    "@typescript-eslint/eslint-plugin": "^8.57.2",
+    "@typescript-eslint/parser": "^8.57.2",
     "cross-env": "^10.1.0",
-    "dotenv": "^17.3.1"
+    "dotenv": "^17.3.1",
+    "eslint": "^8.57.1",
+    "eslint-plugin-playwright": "^2.10.1"
   }
 }

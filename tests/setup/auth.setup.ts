@@ -1,7 +1,6 @@
 import {test as setup} from '@playwright/test';
 
 import {LoginPage} from '../../src/pages/LoginPage';
-import { logger } from '../../src/utils/Loggers';
 
 
 const AUTH_FILES={
@@ -14,7 +13,6 @@ setup.describe('Authentication Setup',()=>{
 
 
     setup("Authenticate as Canadian Individual i.e CAN_individual user ",async ({page})=>{
-
         if(!process.env.CAN_INDIVIDUAL_EMAIL || !process.env.CAN_INDIVIDUAL_PASSWORD){
             throw new Error('Missing credentials for CAN_individual user. Please set CAN_INDIVIDUAL_EMAIL and CAN_INDIVIDUAL_PASSWORD in your environment variables.');
         }
