@@ -10,7 +10,7 @@ export class MyInvestPage extends BasePage{
 
     // --- Locators --- //
 
-    private readonly ferrariCard = this.page.locator("[class*='TransactionDataTableRow_TransactionDataTableRow__DK_wf '] p", { hasText: '1984 Ferrari 512 BBi (Berlinetta Boxer)' });
+    private readonly ferrariCard = this.page.locator("[class*='TransactionDataTableRow_TransactionDataTableRow__DK_wf '] p", { hasText: '2012 Lexus LFA Whitest White' });
     private readonly firstInvestmentAmount = this.page.locator('[aria-label="purchases"] tr td:nth-child(4)').first();
 
     constructor(page:Page ){
@@ -20,10 +20,10 @@ export class MyInvestPage extends BasePage{
    
 
     async clickOnFerrariCard(): Promise<void> {
-        logger.info(this.pageName, "Clicking on Ferrari 1984 512 BBi card in My Investments page");
+        logger.info(this.pageName, "Clicking on 2012 Lexus LFA Whitest White card in My Investments page");
         await this.ferrariCard.click();
-        logger.info(this.pageName, "Clicked on Ferrari 1984 512 BBi card in My Investments page");
-        WaitHelpers.waitForNetworkIdle(this.page);
+        logger.info(this.pageName, "Clicked on 2012 Lexus LFA Whitest White card in My Investments page");
+        // WaitHelpers.waitForNetworkIdle(this.page);
     }
 
     async expectFirstInvestmentCardToHaveAmount(expectedText: string): Promise<void> {

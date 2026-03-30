@@ -5,8 +5,19 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-/playwright/.auth/
-/src/data/env/.env.v3
+
+# Auth state (sensitive - session tokens)
+/.auth/
+
+# Environment files (sensitive)
+.env.local
+/data/env/.env.v3
+
+# TypeScript build output
+/dist/
+
+# Local notes / non-project files
 claude-context.txt
+"claude chat on enterprise level framework.txt"
 
 

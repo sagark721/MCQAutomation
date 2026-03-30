@@ -11,7 +11,7 @@ export class InvestPage extends BasePage{
     // --- Locators --- //
 
     private readonly ourCollectionLozenge:Locator=this.page.getByText('Our Collection')
-    private readonly ferrariCard = this.page.locator('[class*=MuiCard-root]', { hasText: '1984 Ferrari 512 BBi' });
+    private readonly ferrariCard = this.page.locator('[class*=MuiCard-root]', { hasText: '2012 Lexus LFA Whitest White' });
     private readonly ferrariBuyBtn = this.ferrariCard.getByRole('button', { name: 'Buy Shares' });
     private readonly confirmOrderBtn = this.page.getByRole('button', { name: 'Confirm Order' });
 
@@ -27,9 +27,9 @@ export class InvestPage extends BasePage{
     }
 
     async clickFerrariBuyButton(): Promise<void> {
-        logger.info(this.pageName, "Clicking on 'Buy Shares' button for Ferrari 1984 512 BBi");
+        logger.info(this.pageName, "Clicking on 'Buy Shares' button for 2012 Lexus LFA Whitest White");
         await this.ferrariBuyBtn.click();
-        logger.info(this.pageName, "'Buy Shares' button for Ferrari 1984 512 BBi clicked");
+        logger.info(this.pageName, "'Buy Shares' button for 2012 Lexus LFA Whitest White clicked");
         await WaitHelpers.waitForPageReady(this.page);
         await expect(this.confirmOrderBtn).toBeVisible();
         logger.info(this.pageName, "Start Investment page is loaded..");

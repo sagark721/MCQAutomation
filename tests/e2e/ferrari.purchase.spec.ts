@@ -2,7 +2,7 @@ import{test} from '@fixtures';
 
 test.describe("Ferrari Purchase Flow",()=>{
 
-    const amountToInvest = '100';
+    const amountToInvest = '200';
 
     test("Validates the purchase flow of Ferrari 1984 512 BBi by Individual User", async ({individualUser})=>{
         await individualUser.investPage.goto();

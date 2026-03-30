@@ -20,6 +20,7 @@ export class WaitHelpers{
     static async waitForNetworkIdle(page: Page): Promise<void>{
 
         logger.debug('WaitHelpers', 'Waiting for network to be idle');
+        // eslint-disable-next-line playwright/no-networkidle
         await page.waitForLoadState('networkidle');
         logger.debug('WaitHelpers', 'Network is idle now');
     }
