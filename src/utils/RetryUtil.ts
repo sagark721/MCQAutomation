@@ -9,7 +9,7 @@ export async function withRetry<T>(
 ):Promise<T>{
 
 
-    let lastError:any;
+    let lastError:unknown;
 
     for (let attempt =1; attempt <=retries; attempt++){
 
@@ -20,7 +20,7 @@ export async function withRetry<T>(
             logger.debug(context, `Operation succeeded on attempt ${attempt}`);
             return result;
         }
-        catch(error:any){
+        catch(error:any){ //eslint-disable-line @typescript-eslint/no-explicit-any
 
             lastError = error;
 
