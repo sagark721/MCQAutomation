@@ -9,7 +9,7 @@ export async function withRetry<T>(
 ):Promise<T>{
 
 
-    let lastError:unknown;
+    let lastError:any; //eslint-disable-line @typescript-eslint/no-explicit-any
 
     for (let attempt =1; attempt <=retries; attempt++){
 
