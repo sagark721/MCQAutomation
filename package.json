@@ -9,7 +9,8 @@
     "test:mobile:v3": "cross-env TEST_ENV=v3 npx playwright test --project=android",
     "test:desktop:v3": "cross-env TEST_ENV=v3 npx playwright test --project=chromium --headed",
     "lint": "eslint src/**/*.ts tests/**/*.ts",
-    "lint:fix": "eslint src/**/*.ts tests/**/*.ts --fix"
+    "lint:fix": "eslint src/**/*.ts tests/**/*.ts --fix",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +27,14 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-playwright": "^1.8.3",
     "eslint-plugin-prettier": "^5.5.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "prettier": "^3.8.1"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
