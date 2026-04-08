@@ -6,10 +6,12 @@
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
+        "ignoreDeprecations": "6.0",
         "baseUrl": ".",
         "paths": {
             "@fixtures":["src/fixtures/index.ts"],
-            "@logger":["src/utils/Loggers.ts"]
+            "@logger":["src/utils/Loggers.ts"],
+            "@waitHelpers":["src/utils/WaitHelpers.ts"],
         }
 
     },

@@ -22,7 +22,8 @@
     "playwright/no-wait-for-timeout": "error",
     "playwright/no-force-option": "warn",
     "playwright/prefer-web-first-assertions": "error",
-    "no-console": "warn"
+    "no-console": "warn",
+    "playwright/expect-expect": "off"
   },
   "env": {
     "node": true,

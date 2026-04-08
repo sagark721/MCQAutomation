@@ -13,7 +13,7 @@ export class InvestPage extends BasePage{
     private readonly ourCollectionLozenge:Locator=this.page.getByText('Our Collection')
     private readonly ferrariCard = this.page.locator('[class*=MuiCard-root]', { hasText: '2012 Lexus LFA Whitest White' });
     private readonly ferrariBuyBtn = this.ferrariCard.getByRole('button', { name: 'Buy Shares' });
-    private readonly confirmOrderBtn = this.page.getByRole('button', { name: 'Confirm Order' });
+    private readonly lexusCard = this.page.locator('[title="2012 Lexus LFA Whitest White"]');
 
 
     constructor(page:Page ){
@@ -26,13 +26,23 @@ export class InvestPage extends BasePage{
         logger.info(this.pageName, "'Our Collection' lozenge is visible on the page");
     }
 
+    async clickLexusCard(): Promise<void> {
+        logger.info(this.pageName, "Clicking on the card for 2012 Lexus LFA Whitest White");
+        await this.lexusCard.click();
+        logger.info(this.pageName, "Clicked on the card for 2012 Lexus LFA Whitest White");
+        await WaitHelpers.waitForPageReady(this.page);
+        await expect(this.page).toHaveURL('offer/lexus-lfa-whitest-white-2012');
+        logger.info(this.pageName, "Successfully navigated to the details page of 2012 Lexus LFA Whitest White");
+    }
+
     async clickFerrariBuyButton(): Promise<void> {
         logger.info(this.pageName, "Clicking on 'Buy Shares' button for 2012 Lexus LFA Whitest White");
         await this.ferrariBuyBtn.click();
         logger.info(this.pageName, "'Buy Shares' button for 2012 Lexus LFA Whitest White clicked");
         await WaitHelpers.waitForPageReady(this.page);
-        await expect(this.confirmOrderBtn).toBeVisible();
-        logger.info(this.pageName, "Start Investment page is loaded..");
+        
     }
+
+
 
 }

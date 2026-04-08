@@ -9,7 +9,9 @@ dotenv.config({ path: path.resolve(`data/env/.env.${testEnv}`)})
 
 dotenv.config({path:path.resolve('.env.local'), override: true})
 
-console.log(`Environment: ${testEnv}`);
+// eslint-disable-next-line no-console
+console.log(`Environment: ${testEnv}`);  
+// eslint-disable-next-line no-console
 console.log(`Base URL: ${process.env.BASE_URL} \n`)
 
 
@@ -46,7 +48,7 @@ export default defineConfig({
 
         navigationTimeout: 30 * 1000,
 
-        viewport: { width: 1620, height: 700 }
+        viewport:  { width: 1920, height: 1000 } 
     },
 
 
@@ -72,8 +74,10 @@ export default defineConfig({
         {
             name:'chromium',
             use:{
-                ...devices['Desktop Chrome']
+                ...devices['Desktop Chrome'],
+                viewport:  { width: 1920, height: 1000 }
             },
+            
             dependencies: ['setup'],
             testIgnore:['**/setup/**']
         },
