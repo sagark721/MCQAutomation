@@ -6,9 +6,14 @@ test.describe("Ferrari Purchase Flow",()=>{
 
     // eslint-disable-next-line playwright/expect-expect
     test("Validates the purchase flow of Ferrari 1984 512 BBi by Individual User", async ({individualUser})=>{
-        await individualUser.investPage.goto();
+        await individualUser.homePage.goto();
+        await individualUser.homePage.header.clickInvest();
         await individualUser.investPage.verifyOurCollectionLozengeIsVisible();
-        await individualUser.investPage.clickFerrariBuyButton();
+        await individualUser.investPage.clickLexusCard();
+
+        await individualUser.assetDetailsPage.clickInvestNowButton();
+        await individualUser.startInvestmentPage.verifyOnCorrectPage();
+
         await individualUser.startInvestmentPage.enterInvestmentAmount(amountToInvest);
         await individualUser.startInvestmentPage.agreeToTerms();
         await individualUser.startInvestmentPage.selectCardPaymentMethod();

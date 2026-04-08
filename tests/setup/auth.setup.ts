@@ -20,6 +20,7 @@ setup.describe('Authentication Setup',()=>{
         const loginPage= new LoginPage(page);
 
         await loginPage.goto();
+        await loginPage.acceptCookiesIfVisible();
         await loginPage.loginWith({
             email: process.env.CAN_INDIVIDUAL_EMAIL,
             password: process.env.CAN_INDIVIDUAL_PASSWORD,
@@ -46,7 +47,7 @@ setup.describe('Authentication Setup',()=>{
     //     const loginPage=new LoginPage(page);
 
     //     await loginPage.goto();
-        
+        // 
     //     await loginPage.loginWith({
     //         email: process.env.IND_TRUST_EMAIL,
     //         password: process.env.IND_TRUST_PASSWORD,
