@@ -1,5 +1,5 @@
 import {BasePage} from "./BasePage";
-import {Page, Locator} from '@playwright/test';
+import {Page, Locator, expect} from '@playwright/test';
 import {logger} from "@logger"
 import { WaitHelpers } from "src/utils/WaitHelpers";
 
@@ -19,6 +19,11 @@ export class StartInvestmentPage extends BasePage{
 
     constructor(page:Page ){
         super(page)
+    }
+
+    async verifyOnCorrectPage(): Promise<void> {
+        await expect(this.page).toHaveURL(new RegExp(this.path));
+        logger.info(this.pageName, "Start Investment page is loaded..");
     }
 
     async enterInvestmentAmount(amount: string): Promise<void> {
