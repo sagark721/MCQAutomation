@@ -4,6 +4,7 @@
   "description": "The Automation suite for MCQ",
   "main": "index.js",
   "scripts": {
+    "test:smoke:v3": "cross-env TEST_ENV=v3 npx playwright test --project=chromium --grep \"@smoke\"",
     "test:setup:v3": "cross-env TEST_ENV=v3 npx playwright test --project=setup",
     "test:v3": "cross-env TEST_ENV=v3 npx playwright test",
     "test:mobile:v3": "cross-env TEST_ENV=v3 npx playwright test --project=android",
