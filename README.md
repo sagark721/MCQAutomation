@@ -11,6 +11,11 @@ A Playwright-based end-to-end test automation framework for MCQ Markets, support
 | [Playwright](https://playwright.dev) | ^1.58 | Browser automation & test runner |
 | TypeScript | via `@types/node` | Type-safe test authoring |
 | dotenv | ^17 | Environment variable management |
+| ESLint + eslint-plugin-playwright | ^8.57 | Linting for TS and Playwright tests |
+| Prettier | ^3.8 | Code formatting |
+| Husky | ^9.1 | Git hooks (pre-commit linting) |
+| lint-staged | ^16.4 | Run linters on staged files only |
+| cross-env | ^10.1 | Cross-platform environment variables |
 | Node.js | 20+ | Runtime |
 
 ---
@@ -19,22 +24,23 @@ A Playwright-based end-to-end test automation framework for MCQ Markets, support
 
 ```
 MCQAutomation2026/
-├── .auth/                  # Saved authentication state files (auto-generated)
+├── .auth/                  # Saved authentication state files (auto-generated, gitignored)
 ├── .github/workflows/      # GitHub Actions CI pipeline
+├── data/
+│   └── env/                # Environment variable files (e.g. .env.v3 — gitignored)
 ├── src/
-│   ├── components/         # Reusable UI components/helpers
-│   ├── data/env/           # Environment variable files (.env.v3, .env.local)
-│   ├── fixtures/           # Custom Playwright fixtures
+│   ├── components/         # Reusable UI component helpers (Header, Sidebar, etc.)
+│   ├── fixtures/           # Custom Playwright fixtures & page factory
 │   ├── pages/              # Page Object Model (POM) classes
-│   ├── types/              # TypeScript type definitions
-│   └── utils/              # Utility/helper functions
+│   ├── types/              # TypeScript type definitions & env declarations
+│   └── utils/              # Utility/helper functions (logger, retry, wait)
 ├── tests/
 │   ├── api/                # API tests
 │   ├── e2e/                # End-to-end tests
 │   ├── functional/         # Functional tests
 │   └── setup/              # Authentication setup (auth.setup.ts)
-├── .env.example            # Template for required environment variables
 ├── playwright.config.ts    # Playwright configuration
+├── tsconfig.json           # TypeScript configuration
 └── package.json
 ```
 
@@ -61,13 +67,9 @@ npx playwright install
 
 ### 4. Configure Environment Variables
 
-Copy `.env.example` and create your local env file:
+Environment files live in `data/env/` at the project root and follow the naming convention `.env.<environment>` (e.g. `data/env/.env.v3`). These files are gitignored — obtain them from your team or secrets manager.
 
-```bash
-copy .env.example src\data\env\.env.local
-```
-
-Fill in the actual values:
+Optionally create a `.env.local` at the project root to override any variables locally:
 
 ```
 BASE_URL=https://your-environment-url.com
@@ -82,69 +84,84 @@ US_COMPANY_EMAIL=your_email
 US_COMPANY_PASSWORD=your_password
 ```
 
-> ⚠️ Never commit `.env.local` or real credentials to git. It is already listed in `.gitignore`.
+> ⚠️ Never commit env files or real credentials to git. `data/env/.env.v3` and `.env.local` are already listed in `.gitignore`.
 
 ---
 
 ## Running Tests
 
-### Run all tests (default environment: v3)
+All test commands use `cross-env` to set the environment correctly across platforms. The npm scripts are the recommended way to run tests.
+
+### Run auth setup first (required before running tests)
 
 ```bash
-npx playwright test
+npm run test:setup:v3
 ```
 
-### Run against a specific environment
+### Run all tests against v3 (headless)
 
 ```bash
-TEST_ENV=v3 npx playwright test
+npm run test:v3
 ```
 
-### Run a specific test suite
+### Run tests in headed Chromium (v3)
 
 ```bash
-npx playwright test tests/functional/
-npx playwright test tests/api/
-npx playwright test tests/e2e/
+npm run test:desktop:v3
 ```
 
-### Run with a specific browser
+### Run tests on mobile (Android emulation, v3)
 
 ```bash
-npx playwright test --project=chromium
-npx playwright test --project=firefox
-npx playwright test --project=webkit
+npm run test:mobile:v3
+```
+
+### Run a specific test file or folder
+
+```bash
+npx cross-env TEST_ENV=v3 npx playwright test tests/functional/
+npx cross-env TEST_ENV=v3 npx playwright test tests/e2e/
 ```
 
 ### Open the HTML report after a run
 
 ```bash
-npx playwright show-report test-results/html
+npx playwright show-report playwright-report
+```
+
+---
+
+## Linting & Formatting
+
+Husky runs ESLint and Prettier automatically on staged `.ts` files at commit time via lint-staged.
+
+To run manually:
+
+```bash
+# Check for lint errors
+npm run lint
+
+# Auto-fix lint errors and format
+npm run lint:fix
 ```
 
 ---
 
 ## Environments
 
-The framework supports multiple environments controlled by the `TEST_ENV` variable:
+The active environment is controlled by the `TEST_ENV` variable:
 
 | Value | Description |
 |---|---|
 | `v3` | Version 3 environment (default) |
-| `v4` | Version 4 environment |
 
-Environment files live in `src/data/env/` and follow the naming convention `.env.<environment>` (e.g. `.env.v3`).
+The env file is loaded from `data/env/.env.<TEST_ENV>`, with `.env.local` at the root used as an optional local override (highest priority).
 
 ---
 
 ## CI / GitHub Actions
 
 The pipeline is defined in [.github/workflows/pipeline.yml](.github/workflows/pipeline.yml) and is triggered manually via **workflow_dispatch**.
-
-You can select:
-- **Environment**: `v3` or `v4`
-- **Test suite**: `regression`, `smoke`, `functional`, or `api`
-- **Browser**: `chromium`, `webkit`, or `firefox`
 
 Required GitHub Secrets that must be configured in the repository settings:
 
@@ -164,4 +181,4 @@ Required GitHub Secrets that must be configured in the repository settings:
 
 After each CI run, the following are uploaded as GitHub Actions artifacts (retained for 30 days):
 - **HTML Report** — Visual test report with screenshots, videos, and traces
-- **JUnit XML** — Machine-readable results for integrations
+- **JUnit XML** — Machine-readable results at `test-results/junit/results.xml`
