@@ -21,4 +21,8 @@ node_modules/
 claude-context.txt
 "claude chat on enterprise level framework.txt"
 
+# Allure results
+allure-results/
+allure-report/
+
 
