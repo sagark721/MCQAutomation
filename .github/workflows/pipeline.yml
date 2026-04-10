@@ -95,7 +95,7 @@ jobs:
         if: always()
         with:
           name: Playwright-Report-${{github.event.inputs.environment}}-${{github.event.inputs.test_suite}}-${{github.run_number}}
-          path: reports/html/
+          path: playwright-report/
           retention-days: 30
 
 
@@ -105,5 +105,15 @@ jobs:
         if: always()
         with:
           name: junit-results-${{github.event.inputs.environment}}-${{github.event.inputs.test_suite}}-${{github.run_number}}
-          path: reports/junit/result.xml
+          path: test-results/junit/results.xml
+          retention-days: 30
+
+
+
+      - name: Upload Allure Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Allure-Results-${{github.event.inputs.environment}}-${{github.event.inputs.test_suite}}-${{github.run_number}}
+          path: test-results/allure-results/
           retention-days: 30
