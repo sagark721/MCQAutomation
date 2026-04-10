@@ -29,6 +29,7 @@ test.describe("Ferrari Purchase Flow", () => {
     await individualUser.investmentSummaryPage.enterSecurityCode("123");
     await individualUser.investmentSummaryPage.clickContinueWithPayment();
 
+    await individualUser.subscriptionAgreementPage.verifyOnSubscriptionAgreementPage();
     await individualUser.subscriptionAgreementPage.enterSignature("Sagar");
     await individualUser.subscriptionAgreementPage.agreeToTerms();
     await individualUser.subscriptionAgreementPage.clickSignAgreement();
