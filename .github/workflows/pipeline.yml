@@ -82,6 +82,9 @@ jobs:
         run: |
           if [ "${{github.event.inputs.test_suite}}" = 'regression']; then 
           npx playwright test --project=${{github.event.inputs.browser}}; 
+
+          elif [ "${{ github.event.inputs.test_suite }}" = 'smoke' ]; then
+          npx playwright test --project=chromium --grep @smoke
           
           fi
 

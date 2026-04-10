@@ -75,6 +75,7 @@ export default defineConfig({
       use: {
         ...devices["Desktop Chrome"],
         viewport: { width: 1920, height: 1000 },
+        headless: true,
       },
 
       dependencies: ["setup"],
