@@ -4,7 +4,7 @@ test.describe("Ferrari Purchase Flow", () => {
   const amountToInvest = "100";
 
   // eslint-disable-next-line playwright/expect-expect
-  test("Validates the purchase flow of 2012 Lexus LFA Whitest White by Individual User @smoke @e2e", async ({
+  test("Validates the purchase flow of 2012 Lexus LFA Whitest White by Individual User  @e2e", async ({
     individualUser,
   }) => {
     await individualUser.homePage.goto();
